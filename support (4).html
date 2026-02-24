@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>サポート | 文字カウンター</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f7f5;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --border: #e5e5e3;
+      --accent: #1A8CD8;
+      --radius: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111111;
+        --surface: #1c1c1e;
+        --text: #f0f0f0;
+        --muted: #8e8e93;
+        --border: #2c2c2e;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      padding: 40px 20px 80px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .app-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h2 .icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .faq-item:first-child { padding-top: 0; }
+
+    .faq-q {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .contact-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .contact-box p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .features { grid-template-columns: 1fr; }
+    }
+
+    .feature-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-item .feat-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    p { font-size: 15px; color: var(--muted); margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer a { margin: 0 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <p class="app-label">文字カウンター</p>
+      <h1>サポート</h1>
+      <p class="subtitle">お困りの際はこちらをご確認ください。</p>
+    </header>
+
+    <!-- 機能紹介 -->
+    <div class="card">
+      <h2><span class="icon">✨</span>主な機能</h2>
+      <div class="features">
+        <div class="feature-item"><span class="feat-icon">🔢</span>リアルタイム文字数カウント</div>
+        <div class="feature-item"><span class="feat-icon">⚙️</span>カウント方法の切り替え</div>
+        <div class="feature-item"><span class="feat-icon">📋</span>テキストのコピー</div>
+        <div class="feature-item"><span class="feat-icon">🗑️</span>クリア（確認ダイアログ付き）</div>
+        <div class="feature-item"><span class="feat-icon">🌙</span>ダークモード対応</div>
+        <div class="feature-item"><span class="feat-icon">🎨</span>アクセントカラー変更</div>
+      </div>
+    </div>
+
+    <!-- 使い方 -->
+    <div class="card">
+      <h2><span class="icon">📖</span>使い方</h2>
+      <div class="faq-item">
+        <p class="faq-q">文字数を数えるには？</p>
+        <p class="faq-a">入力エリアにテキストを入力するか貼り付けると、自動的に文字数がカウントされます。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">カウント方法を変えるには？</p>
+        <p class="faq-a">「カウント方法」のセグメントコントロールから「全文字」「空白除く」「改行除く」「両方除く」を選択できます。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">ダークモードに切り替えるには？</p>
+        <p class="faq-a">画面右上の歯車アイコン →「カラーモード」から「ダーク」「ライト」「システム連動」を選べます。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">アクセントカラーを変えるには？</p>
+        <p class="faq-a">歯車アイコン →「アクセントカラー」から4色のカラーサークルをタップして変更できます。</p>
+      </div>
+    </div>
+
+    <!-- よくある質問 -->
+    <div class="card">
+      <h2><span class="icon">❓</span>よくある質問</h2>
+      <div class="faq-item">
+        <p class="faq-q">入力したテキストはどこかに送られますか？</p>
+        <p class="faq-a">いいえ。入力されたテキストはお使いの端末内のみで処理され、外部サーバーへ送信されることは一切ありません。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">広告が表示されるのはなぜですか？</p>
+        <p class="faq-a">本アプリは無料でご利用いただくため、Google AdMob による広告を表示しています。広告収益によりアプリの開発・維持が支えられています。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">対応しているiOSのバージョンは？</p>
+        <p class="faq-a">iOS 16.0 以上に対応しています。最新バージョンのiOSへのアップデートをお勧めします。</p>
+      </div>
+    </div>
+
+    <!-- お問い合わせ -->
+    <div class="card">
+      <h2><span class="icon">✉️</span>お問い合わせ</h2>
+      <p>上記で解決しない場合は、メールにてお気軽にお問い合わせください。内容を確認のうえ、できる限り早くご返信いたします。</p>
+      <br/>
+      <div class="contact-box">
+        <p>お問い合わせはこちらから</p>
+        <!-- メールアドレスを差し替えてください -->
+        <a class="btn" href="mailto:support@example.com">メールで問い合わせる</a>
+      </div>
+    </div>
+
+    <footer>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <span style="color:var(--border)">|</span>
+      © 2025 文字カウンター
+    </footer>
+
+  </div>
+</body>
+</html>
